@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7fc">
+  <meta name="description" content="StudyFlow – Quản lý môn học, nhiệm vụ, thời khóa biểu và thời gian tập trung dành cho sinh viên.">
+  <title>StudyFlow • Sổ tay học tập dành cho sinh viên</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Menu điều hướng">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <img class="brand-logo" src="tridev-logo.jpg" alt="TRIDEV logo" width="42" height="56">
+        <div class="brand-copy">
+          <strong>StudyFlow</strong>
+          <small>Kế hoạch học tập sinh viên</small>
+        </div>
+        <button class="icon-btn mobile-close" data-action="close-sidebar" aria-label="Đóng menu">✕</button>
+      </div>
+      <p class="nav-heading">KHÔNG GIAN HỌC TẬP</p>
+      <nav id="nav" class="nav-list"></nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-note">
+        <div class="side-note-icon" id="sideNoteIcon">✦</div>
+        <strong>Từng bước nhỏ, tiến bộ lớn.</strong>
+        <p>Xây dựng thói quen học tập bền vững mỗi ngày.</p>
+        <button class="note-link" data-action="navigate" data-page="focus">Bắt đầu tập trung <span>↗</span></button>
+      </div>
+      <div class="sidebar-foot"><div class="foot-avatar" id="sidebarAvatar">S</div><div><strong id="sidebarName">Sinh viên</strong><span>Dữ liệu lưu trên thiết bị</span></div><span class="local-dot"></span></div>
+    </aside>
+    <div id="overlay" class="side-overlay" data-action="close-sidebar"></div>
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-left"><button class="icon-btn menu-btn" data-action="open-sidebar" aria-label="Mở menu"><span class="hamburger">☰</span></button><span class="breadcrumb">GÓC HỌC TẬP <span class="breadcrumb-sep">/</span> <span id="breadcrumbCurrent">Tổng quan</span></span></div>
+        <div class="topbar-right"><span class="today-label" id="headerDate"></span><button class="icon-btn theme-toggle" data-action="toggle-theme" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện sáng tối"><span id="themeIcon">☾</span></button><button class="head-avatar" data-action="navigate" data-page="settings" title="Cài đặt cá nhân" id="headerAvatar">S</button></div>
+      </header>
+      <main id="content" class="content" tabindex="-1"></main>
+      <footer class="site-footer">StudyFlow <span>•</span> Học tập chủ động, mỗi ngày một tốt hơn <span>•</span> <span>Phát triển bởi TRIDEV • Mã SV: DE220123</span></footer>
+    </div>
+  </div>
+  <nav class="bottom-nav" id="bottomNav" aria-label="Điều hướng nhanh trên điện thoại"></nav>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+  <input type="file" id="jsonFile" accept=".json,application/json" hidden>
+  <script src="app.js" defer></script>
+</body>
+</html>
